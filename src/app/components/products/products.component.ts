@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  // interpolation:['?','?'] //This is a code segment to be used when trying out delimitter configuration
 })
 export class ProductsComponent implements OnInit {
   public firstProductItemName = 'White Basmathi Rice';
