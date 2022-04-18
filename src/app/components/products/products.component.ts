@@ -15,18 +15,12 @@ export class ProductsComponent implements OnInit {
   showEditProduct!: boolean;
   selectedProductId! :number;
   message! :string;
-  @ViewChild(ViewProductDetailsComponent) viewComponent!: ViewProductDetailsComponent;
 
   constructor(private productService : ProductService) {}
 
   ngOnInit(): void {
     this.getProducts();
-    //this.message = this.viewComponent.childMessage;
   }
-
-  ngAfterViewInit(){
-    this.message = this.viewComponent.childMessage
-   }
 
   public products: Product[] = [];
 
