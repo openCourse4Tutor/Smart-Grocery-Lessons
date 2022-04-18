@@ -53,6 +53,7 @@
                             <p *ngIf="product.quantity > 50">Sufficient inventory </p>
                          </td>
                          <td>
+                          <a [routerLink]="['/product-detail-view', product.id]">
                             <button
                               type="button"
                               [disabled]="rowIndex != i"
@@ -60,6 +61,7 @@
                             >
                               <i class="fa fa-eye"></i>
                             </button>
+                            </a>
                             <button
                               type="button"
                               [disabled]="rowIndex != i"

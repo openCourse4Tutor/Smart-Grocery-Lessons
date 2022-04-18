@@ -1,1 +1,55 @@
-<p>view-product-details works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class=" text-end mt-3 mb-3">
+
+        </div>
+
+        <div class="col-md-10 content-bg ">
+            <div>
+                <h5 class="mb-3">{{product.productName}}</h5>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label class="form-label">Product Id:</label>
+                    <span>{{product.id}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Name:</label>
+                    <span>{{product.productName}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description:</label>
+                    <span>{{product.description}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category:</label>
+                    <span>{{product.category}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Brand:</label>
+                    <span>{{product.brand}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Expire Date:</label>
+                    <span>{{product.expiredDate  | date: "dd/MM/yyyy" }}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Manufactured Date:</label>
+                    <span>{{product.manufacturedDate  | date: "dd/MM/yyyy" }}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Unit Price:</label>
+                    <span>{{product.unitPrice | currency: "Rs." }}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Quantity:</label>
+                    <span>{{product.quantity}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Created Date:</label>
+                    <span>{{ product.createdDate| date: "dd/MM/yyyy" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
