@@ -6,25 +6,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  public firstProductItemName = 'White Basmathi Rice';
   constructor() {}
 
   ngOnInit(): void {}
 
-  public getPriceofRice() {
-    return 350;
-  }
-
-  // variables related to show how private protected members work in interpolation.
-  // comment out and try
-  //private firstProductItemName = "White Basmathi Rice" ;
-  //protected firstProductItemName = "White Basmathi Rice" ;
-
-
-
-  // variables related to show Invalid templates using Assignment, bitwise, increment and decrement perators (=,+=, -=, |, &, ++, –,!, ?. etc.)
-  // comment out and try
-  // public quantityOfRice : number = 5;
-  //<td>{{quantityOfRice++}}</td>
-  //<td>{{quantityOfRice + 1 }}</td>
+  public products = [
+    {
+      productId: '001',
+      productName: 'White Basmathi Rice',
+      createdDate: '2020.01.29',
+      quantity: 100,
+      unitPrice: '400',
+      productDescription: 'White Basmathi Rice imported from pakistan',
+    },
+    {
+      productId: '002',
+      productName: 'Sugar',
+      createdDate: '2020.01.29',
+      quantity: 1200,
+      unitPrice: '200',
+      productDescription: 'White sugar manufactured by Palwatte Factory',
+    },
+    {
+      productId: '003',
+      productName: 'Flour',
+      createdDate: '2020.01.29',
+      quantity: 50,
+      unitPrice: '190',
+      productDescription: 'Super FIne Whole grain general Purpose flour ',
+    },
+    {
+      productId: '004',
+      productName: 'Dhal',
+      createdDate: '2020.01.29',
+      quantity: 10,
+      unitPrice: '200',
+      productDescription: 'Imported mysoor dhal from India',
+    },
+  ];
 }
