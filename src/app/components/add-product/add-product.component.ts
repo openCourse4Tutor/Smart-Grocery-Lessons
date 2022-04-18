@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Product } from 'src/app/models/product.model';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -17,12 +19,12 @@ export class AddProductComponent implements OnInit {
     batchNumber: ['', Validators.required],
     unitPrice: ['', [Validators.required, Validators.min(1)]],
     quantity: ['', [Validators.required, Validators.min(50)]],
-    createdDate: ['', Validators.required],
   });
 
   isDataUploading = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private productService :ProductService) {}
   
   ngOnInit(): void {
   }
@@ -31,6 +33,15 @@ export class AddProductComponent implements OnInit {
     return this.productFrom.controls;
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const values = this.productFrom.value as Product;
+    values.createdDate = new Date().toDateString();
+    this.isDataUploading = true;
+    this.productService.addProduct(values as Product).subscribe((res) => {
+      debugger;
+      this.isDataUploading = false;
+      this.productFrom.reset();
+    });
+  }
 
 }
