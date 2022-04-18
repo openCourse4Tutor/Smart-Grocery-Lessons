@@ -28,4 +28,8 @@ export class ProductService {
   getProducts(): Observable<ProductResponse> {
     return this.http.get<ProductResponse>(this.baseUrl + 'api/products');
   }
+
+  updateProduct(product: Product): Observable<any> {
+    return this.http.put<any>(this.baseUrl + 'api/products', product);
+  }
 }

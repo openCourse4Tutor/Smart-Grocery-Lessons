@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   showAddProduct!: boolean;
   isLoading :boolean = false;
   showEditProduct!: boolean;
-  selectedProductId! :number;
+  selectedProduct! :Product;
   message! :string;
 
   constructor(private productService : ProductService) {}
@@ -24,12 +24,15 @@ export class ProductsComponent implements OnInit {
 
   public products: Product[] = [];
 
-  public selectProduct(selectedRow:any, selectedId :number) {
+  public selectProduct(selectedRow:any, product :Product) {
     this.rowIndex = selectedRow;
-    this.selectedProductId =selectedId;
+    this.selectedProduct =product;
   }
 
   showAddProducts() {
+    if(this.showEditProduct){
+      this.showEditProduct =false;
+    }
       this.showAddProduct = true;
   }
   
@@ -42,6 +45,9 @@ export class ProductsComponent implements OnInit {
   }
 
   OpenEditProductView(){
+    if(this.showAddProduct){
+      this.showAddProduct = false;
+    }
     this.showEditProduct = true;
   }
 

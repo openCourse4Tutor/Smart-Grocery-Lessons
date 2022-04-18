@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i, product.id)" [ngClass]="rowIndex == i ? 'active' : ''">
+                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i, product)" [ngClass]="rowIndex == i ? 'active' : ''">
                         <td>{{product.id}}</td>
                         <td>{{product.productName}}</td>
                         <!-- <td>{{product.productDescription}}</td> -->
@@ -75,7 +75,7 @@
         </section>
         <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
           <app-add-product *ngIf="showAddProduct" (cancelAddView) = "hideAddProducts()" (productAddEvent) ="updateProductList()"></app-add-product>
-          <app-edit-product  [productId] = "selectedProductId" *ngIf="showEditProduct" (cancelEditView) = "closeEditView()"></app-edit-product>
+          <app-edit-product  [product] = "selectedProduct" *ngIf="showEditProduct" (cancelEditView) = "closeEditView()" (productAddEvent) ="updateProductList()"></app-edit-product>
         </section>
     </div>
 </div> 
