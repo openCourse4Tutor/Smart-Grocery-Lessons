@@ -1,6 +1,7 @@
 <div class="add-product-section mt-3">
     <div class="box-head">
         <h1 class="pr-name">Add a new product</h1>
+        <button type="button" class="btn btn-light" (click)="cancel()">X</button>
     </div>
     <form [formGroup]="productFrom" (ngSubmit)="onSubmit()" class="row g-3">
         <div class="form-group">
@@ -78,7 +79,7 @@
         </div>
 
         <div class="col-12 text-end mt-5">
-            <button type="button" class="btn btn btn-outline-secondary me-2">cancel</button>
+            <button type="button" class="btn btn btn-outline-secondary me-2" (click) = "cancel()">cancel</button>
             <button type="submit" [disabled]="!productFrom.valid" class="btn btn-outline-primary">Submit<i
                     *ngIf="isDataUploading" class="fa fa-spinner fa-pulse fa-fw"></i></button>
         </div>
