@@ -17,7 +17,6 @@ export class AddProductComponent implements OnInit {
     batchNumber: ['', Validators.required],
     unitPrice: ['', [Validators.required, Validators.min(1)]],
     quantity: ['', [Validators.required, Validators.min(50)]],
-    createdDate: ['', Validators.required],
   });
 
   isDataUploading = false;
